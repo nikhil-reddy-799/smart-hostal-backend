@@ -25,8 +25,10 @@ public class AdminService {
                 .toList();
     }
 
-    public List<Staff> getAllStaff() {
-        return staffRepository.findAll();
+    public List<User> getAllStaff() {
+        return userRepository.findAll().stream()
+                .filter(u -> u.getRole() == User.Role.STAFF)
+                .toList();
     }
 
     public Staff addStaff(Staff staff) {

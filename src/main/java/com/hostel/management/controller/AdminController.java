@@ -23,7 +23,7 @@ public class AdminController {
     }
 
     @GetMapping("/staff")
-    public ResponseEntity<List<Staff>> getStaff() {
+    public ResponseEntity<List<User>> getStaff() {
         return ResponseEntity.ok(adminService.getAllStaff());
     }
 
